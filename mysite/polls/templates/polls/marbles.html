@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+{%load static %}
 <head>
 <title>ARUNA GRANITE AND MARBLES</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,19 +8,32 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="css/style.css" rel='stylesheet' type='text/css' /> 
-<link rel="stylesheet" href="css/smoothbox.css" type='text/css' >
+<link href="{% static 'polls/css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'polls/css/style.css' %}" rel='stylesheet' type='text/css' /> 
+<link rel="stylesheet" href="{% static 'polls/css/smoothbox.css' %}" type='text/css' >
 <!-- //Custom Theme files -->
 <!-- js -->
-<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'polls/js/cookies.js' %}"></script>
+
+<script src="{% static 'polls/js/jquery.min.js' %}"></script>
+    
+<script type="text/javascript">
+    function checkCookie() {
+    var no=getCookie("no");
+    if (no != "") {
+        document.getElementById("no_of_products").textContent=no;
+    } else {
+       document.getElementById("no_of_products").textContent=0;
+    }
+}
+</script>
 <!-- //js -->
 <!-- web font -->
 <link href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!-- //web font -->
 </head>
-<body> 
+<body onload="checkCookie()"> 
 	
 		
 			<div class="navigation">
@@ -30,7 +42,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<h1><a href="index.html">ARUNA <span class="w3agile">GRANITE AND MARBLES</span></a></h1>
 					</div>
 					<div class="navigation-right">
-						<span class="menu"><img src="images/menu.png" alt=" " /></span>
+						<span class="menu"><img src="{% static 'polls/images/menu.png' %}" alt=" " /></span>
 						<nav class="link-effect-3" id="link-effect-3">
 							<ul class="nav1 nav">
 								<li><a data-hover="Home" href="index.html">Home</a></li>
@@ -64,27 +76,27 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                 <div class="col-md-2">
                   <div class="panel panel-default">
                     <div class="panel-heading"><h4>WishList</h4></div>
-                       <div class="panel-body">Panel content</div>
+                       <a href="#" class="panel-body">Products<span id="no_of_products" class="badge">0</span></a>
                     </div>
                 </div>
                 <div class="col-md-10">
-                  <img src="images/marble_page.jpg"/>
+                  <img src="{% static 'polls/images/marble_page.jpg' %}"/>
                   <p>Marble is a non foliated metamorphic rock. It is extensively used for sculpture, as a building material, and in many other applications. Marbles are capable of taking a high polish.</p>  
                   <hr> 
                   <h3>SubCateogories</h3>
                   <div class="row">
                     <div class="col-md-3">
                        <div class="thumbnail">
-                         <img src="images/rain_forest_golden.jpg" alt="...">
+                         <img src="{% static 'polls/images/rain_forest_golden.jpg' %}" alt="...">
                           <div class="caption">
                              <h4>Rain Forest Golden</h4>
-                                <p><a href="#" class="btn btn-default btn-log" data-toggle="modal" data-target="#myModal1" role="button">View</a> <a href="#" class="btn btn-default"  role="button">Add To WishList</a></p>
+                                <p><a href="#" class="btn btn-default btn-log" data-toggle="modal" data-target="#myModal1" role="button">View</a> <a href="#" class="btn btn-default"  role="button" onclick="createCookie('Rain Forest Golden','{% static 'polls/images/rain_forest_golden.jpg' %}')">Add To WishList</a></p>
                          </div>
                        </div>
                         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                          <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                              <img src="images/rain_forest_golden_xl.jpg">
+                              <img src="{% static 'polls/images/rain_forest_golden_xl.jpg' %}">
 
                           </div>
                          </div>
@@ -92,16 +104,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                       </div>
                        <div class="col-md-3">
                        <div class="thumbnail">
-                         <img src="images/rain_forest_green.jpg" alt="...">
+                         <img src="{% static 'polls/images/rain_forest_green.jpg' %}" alt="...">
                           <div class="caption">
-                             <h4>Rain Forest Golden</h4>
-                                <p><a href="#" class="btn btn-default btn-log" data-toggle="modal" data-target="#myModal2" role="button">View</a> <a href="#" class="btn btn-default"  role="button">Add To WishList</a></p>
+                             <h4>Rain Forest Green</h4>
+                                <p><a href="#" class="btn btn-default btn-log" data-toggle="modal" data-target="#myModal2" role="button">View</a> <a href="#" class="btn btn-default"  role="button" onclick="createCookie('Rain Forest Green','{% static 'polls/images/rain_forest_green.jpg' %}')">Add To WishList</a></p>
                          </div>
                        </div>
                         <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                          <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                              <img src="images/rain_forest_green_xl.jpg">
+                              <img src="{% static 'polls/images/rain_forest_green_xl.jpg' %}">
 
                           </div>
                          </div>
@@ -109,16 +121,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                       </div>
                        <div class="col-md-3">
                        <div class="thumbnail">
-                         <img src="images/rain_forest_brown.jpg" alt="...">
+                         <img src="{% static 'polls/images/rain_forest_brown.jpg' %}" alt="...">
                           <div class="caption">
-                             <h4>Rain Forest Golden</h4>
-                                <p><a href="#" class="btn btn-default btn-log" data-toggle="modal" data-target="#myModal3" role="button">View</a> <a href="#" class="btn btn-default"  role="button">Add To WishList</a></p>
+                             <h4>Rain Forest Brown</h4>
+                                <p><a href="#" class="btn btn-default btn-log" data-toggle="modal" data-target="#myModal3" role="button">View</a> <a href="#" class="btn btn-default"  role="button" onclick="createCookie('Rain Forest Brown','{% static 'polls/images/rain_forest_brown.jpg' %}')">Add To WishList</a></p>
                          </div>
                        </div>
                         <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                          <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                              <img src="images/rain_forest_brown_xl.jpg">
+                              <img src="{% static 'polls/images/rain_forest_brown_xl.jpg' %}">
 
                           </div>
                          </div>
@@ -126,16 +138,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                       </div>
                        <div class="col-md-3">
                        <div class="thumbnail">
-                         <img src="images/pink_marble.jpg" alt="...">
+                         <img src="{% static 'polls/images/pink_marble.jpg' %}" alt="...">
                           <div class="caption">
-                             <h4>Rain Forest Golden</h4>
-                                <p><a href="#" class="btn btn-default btn-log" data-toggle="modal" data-target="#myModal4" role="button">View</a> <a href="#" class="btn btn-default"  role="button">Add To WishList</a></p>
+                             <h4>Pink Marble</h4>
+                                <p><a href="#" class="btn btn-default btn-log" data-toggle="modal" data-target="#myModal4" role="button">View</a> <a href="#" class="btn btn-default"  role="button" onclick="createCookie('Pink Marble','{% static 'polls/images/pink_marble.jpg' %}')">Add To WishList</a></p>
                          </div>
                        </div>
                         <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                          <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                              <img src="images/pink_marble_xl.jpg">
+                              <img src="{% static 'polls/images/pink_marble_xl.jpg' %}">
 
                           </div>
                          </div>
@@ -177,11 +189,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</div>
 	<!-- //contact -->
 	<!-- bootstrap js -->
-	<script src="js/bootstrap.js"></script>
+	<script src="{% static 'polls/js/bootstrap.js' %}"></script>
 	<!-- //bootstrap js -->
 	<!-- start-smooth-scrolling -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="{% static 'polls/js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'polls/js/easing.js' %}"></script>
+	<!--<script type="text/javascript" src="{% static 'polls/js/cookies.js' %}"></script>-->
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			$(".scroll").click(function(event){		
@@ -209,4 +222,3 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</script>
 	<!-- //here ends scrolling icon -->
 </body>
-</html>
