@@ -37,15 +37,15 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<span class="menu"><img src="{% static 'polls/images/menu.png' %}" alt=" " /></span>
 						<nav class="link-effect-3" id="link-effect-3">
 							<ul class="nav1 nav">
-								<li class="active"><a data-hover="Home" href="">Home</a></li>
+								<li><a data-hover="Home" href="">Home</a></li>
 								<li><a href="#about" class="scroll" data-hover="About">About</a></li>
 								<li><a href="#agents" class="scroll" data-hover="Products">Products</a></li> 
-								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-hover="Pages">Pages <span class="caret"></span></a>
+                        <!--        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-hover="Pages">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu"> 
 										<li><a data-hover="Gallery" href="#gallery" class="scroll">Gallery</a></li>
 										<li><a data-hover="Testimonials" href="#testimonial" class="scroll">Testimonials</a></li>
 									</ul>
-								</li>  
+								</li>  -->  
 								<li><a data-hover="Contact" href="#contact" class="scroll">Contact</a></li>
 							</ul>
 						</nav>
@@ -65,45 +65,43 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			
     <!--wishlist-->
     <div style="padding:20px">
-    <table style="width:80%; padding:40px; margin:40px">
-      <tr>
-         <th>Products</th>
-         <th></th> 
-         <th></th>
-      </tr>
-      <br/>
-      <tr>
-         <th></th>
-         <th></th> 
-         <th></th>
-      </tr>
-      <tr>
-       <td>Jill</td>
-       <td></td> 
-       <td><button type="button" class="btn btn-warning btn-xs">Delete</button></td>
-      </tr>
-      <br/>
-      <tr>
-         <th></th>
-         <th></th> 
-         <th></th>
-      </tr>
-      <tr>
-       <td>Eve</td>
-       <td></td> 
-       <td><button type="button" class="btn btn-warning btn-xs">Delete</button></td>
-      </tr>
-      <br/>
-      <tr>
-         <th></th>
-         <th></th> 
-         <th></th>
-      </tr>
-    </table>
+    
+     {% for name,value in cookies.items %}
+      {% if name != 'csrftoken' %}
+       <div class="row">
+                    <div class="col-md-3">
+                       <div class="thumbnail">
+                         <img src={{value}} alt="...">
+                       </div>
+                    </div>
+                    <div class="col-md-3 col-md-offset-2" style="text-align:center">{{name}}</div>
+        </div>
+        {%endif%}
+
+    {% endfor %}
+    
     </div>
     
     <!--wishlist-->
 	
+    <!--send email-->
+    <form class="form-horizontal" action="{% url 'polls:vote' %}" method="post">
+    {%csrf_token%}
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Email:</label>
+    <div class="col-sm-6">
+      <input type="email" name="choice" size="35" class="form-control" placeholder="Enter email">
+    </div>
+  </div>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-8">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+    </form>
+
+    <!--send email-->
+    
 	<!-- contact -->
 	<div class="contact" id="contact">
 		<div style="background-color:#ADD8E6; padding:40px 40px 40px 40px">

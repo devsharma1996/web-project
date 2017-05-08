@@ -35,12 +35,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 								<li class="active"><a data-hover="Home" href="">Home</a></li>
 								<li><a href="#about" class="scroll" data-hover="About">About</a></li>
 								<li><a href="#agents" class="scroll" data-hover="Products">Products</a></li> 
-								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-hover="Pages">Pages <span class="caret"></span></a>
+			<!--					<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-hover="Pages">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu"> 
 										<li><a data-hover="Gallery" href="#gallery" class="scroll">Gallery</a></li>
 										<li><a data-hover="Testimonials" href="#testimonial" class="scroll">Testimonials</a></li>
 									</ul>
-								</li>  
+								</li>  -->
 								<li><a data-hover="Contact" href="#contact" class="scroll">Contact</a></li>
 							</ul>
 						</nav>
@@ -131,12 +131,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				</div>
 				<div class="col-md-3 agile_team_grid">
 					<div class="view w3-agile-view">
-                        <a href="marbles.html"><img src="{% static 'polls/images/marbles.jpg' %}" alt=" " class="img-responsive" /></a>
-						<div class="w3lmask">
+                        <a href="{% url 'polls:marble' %}"><img href="{% url 'polls:marble' %}" src="{% static 'polls/images/marbles.jpg' %}" alt=" " class="img-responsive"></a>
+						<a href="{% url 'polls:marble' %}"><div class="w3lmask">
 							<h5>Marbles</h5>
 							<p>Marble is a non foliated metamorphic rock. It is extensively used for sculpture, as a building material, and in many other applications. Marbles are capable of taking a high polish.</p>
 						
-						</div>
+                            </div></a>
 					</div>
 					<h4>Marbles</h4>
 					

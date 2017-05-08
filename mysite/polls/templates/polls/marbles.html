@@ -45,15 +45,15 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<span class="menu"><img src="{% static 'polls/images/menu.png' %}" alt=" " /></span>
 						<nav class="link-effect-3" id="link-effect-3">
 							<ul class="nav1 nav">
-								<li><a data-hover="Home" href="index.html">Home</a></li>
+								<li><a data-hover="Home" href="{% url 'polls:index' %}">Home</a></li>
 								<li><a href="#about" class="scroll" data-hover="About">About</a></li>
 								<li class="active"><a href="#agents" class="scroll" data-hover="Products">Products</a></li> 
-								<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-hover="Pages">Pages <span class="caret"></span></a>
+				<!--				<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-hover="Pages">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu"> 
 										<li><a data-hover="Gallery" href="#gallery" class="scroll">Gallery</a></li>
 										<li><a data-hover="Testimonials" href="#testimonial" class="scroll">Testimonials</a></li>
 									</ul>
-								</li>  
+								</li>-->  
 								<li><a data-hover="Contact" href="#contact" class="scroll">Contact</a></li>
 							</ul>
 						</nav>
@@ -76,7 +76,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                 <div class="col-md-2">
                   <div class="panel panel-default">
                     <div class="panel-heading"><h4>WishList</h4></div>
-                       <a href="#" class="panel-body">Products<span id="no_of_products" class="badge">0</span></a>
+                       <a href="{% url 'polls:wishlist' %}" class="panel-body">Products<span id="no_of_products" class="badge">0</span></a>
                     </div>
                 </div>
                 <div class="col-md-10">

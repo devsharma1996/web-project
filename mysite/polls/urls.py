@@ -7,4 +7,5 @@ urlpatterns=[
     url(r'^$',views.index,name="index"),
     url('marble/',views.marble,name="marble"),
     url('wishlist/',views.wishlist,name="wishlist"),
+    url('vote/',views.vote,name="vote"),
 ]

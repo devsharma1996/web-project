@@ -18,7 +18,7 @@ function createCookie(type,product){
         ReadCookie();
         no=parseInt(getCookie('no'))+1;
         document.cookie="no="+no+";";
-        document.cookie=type+"="+product+";";
+        document.cookie=type+"="+product+";"+"path=/";
         document.getElementById("no_of_products").textContent=no;
         allcookies=document.cookie;
         console.log(allcookies);
